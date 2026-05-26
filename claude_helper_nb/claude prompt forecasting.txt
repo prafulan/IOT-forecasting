@@ -1,0 +1,161 @@
+You are an expert Senior Data Scientist specializing in industrial time-series forecasting, telemetry analytics, sensor data modeling, and scalable ML forecasting systems.
+
+I am uploading my existing Jupyter notebook which already contains:
+- EDA
+- preprocessing
+- missing value handling
+- resampling
+- stationarity analysis
+- decomposition
+- outlier analysis
+- ACF/PACF analysis
+- baseline forecasting models
+
+I want you to carefully study my notebook first and then CONTINUE building a production-grade forecasting pipeline from where my notebook currently ends.
+
+IMPORTANT CONTEXT:
+- Data contains device readings every 5 seconds for 30 days
+- Forecasting requirement:
+    Predict device readings for the next 3 hours at every 5-second interval
+- Forecast horizon:
+    3 * 60 * 60 / 5 = 2160 future steps
+- Dataset has:
+    - strong short-term autocorrelation
+    - local/short seasonality
+    - structural outages
+    - spikes/anomalies
+    - large scale (~500k+ observations)
+- Long seasonal cycles are NOT very strong
+- Classical SARIMA with large seasonal periods became computationally infeasible
+
+I do NOT want simplistic beginner-level forecasting examples.
+
+I want you to design a robust and scalable forecasting pipeline suitable for:
+- industrial telemetry
+- IoT/sensor forecasting
+- real-world production systems
+- large-scale time-series
+
+IMPORTANT REQUIREMENTS:
+
+1. Carefully analyze my existing notebook first.
+2. Continue from my current workflow instead of restarting from scratch.
+3. Preserve my existing variables/dataframes whenever possible.
+4. Explain major modeling decisions briefly but focus primarily on high-quality code.
+5. Avoid computationally infeasible approaches for this dataset scale.
+6. Generate notebook-style code cells sequentially with markdown explanations between sections.
+7. Use clean modular code and reusable functions.
+8. Include train/test-safe feature engineering without leakage.
+9. Include evaluation pipelines and model comparison tracking.
+10. Include visualization of predictions vs actuals.
+
+IMPORTANT NOTE:
+I want TWO separate notebooks:
+
+1. Traditional ML / Feature Engineering Forecasting Notebook
+2. Deep Learning Forecasting Notebook
+
+Do NOT mix both approaches into one notebook.
+
+The first notebook should focus ONLY on scalable ML-based forecasting approaches.
+The second notebook should focus ONLY on deep learning forecasting approaches.
+
+========================================
+NOTEBOOK 1 — ML / FEATURE ENGINEERING PIPELINE
+========================================
+
+This notebook should include:
+
+# STAGE 1 — Advanced Feature Engineering
+Create:
+- lag features
+- rolling statistics
+- exponentially weighted features
+- short seasonal lag features
+- cyclical time features
+- trend features
+- outage indicators if useful
+
+Avoid overengineering weak long-seasonality features.
+
+# STAGE 2 — Forecasting Strategy Design
+Carefully explain and implement:
+- recursive forecasting
+- direct forecasting
+- multi-step forecasting
+
+Then recommend the best approach for this assignment.
+
+# STAGE 3 — Scalable ML Forecasting Models
+Implement robust versions of:
+- XGBoost
+- LightGBM
+- Random Forest baseline
+
+Include:
+- proper feature matrices
+- walk-forward validation if appropriate
+- recursive multi-step forecasting logic
+- horizon-aware prediction handling
+
+# STAGE 4 — Model Evaluation Framework
+Build:
+- reusable evaluation utilities
+- MAE
+- RMSE
+- SMAPE
+- MASE if useful
+- prediction plots
+- residual analysis
+- model leaderboard dataframe
+
+# STAGE 5 — Advanced Improvements
+If appropriate, additionally propose:
+- probabilistic forecasting
+- quantile forecasting
+- regime-aware modeling
+- anomaly-aware forecasting
+- outage-aware forecasting
+
+IMPORTANT:
+- Prefer scalable practical approaches over theoretically elegant but computationally expensive models.
+- Focus on realistic production-grade forecasting architecture.
+- Explain tradeoffs between models.
+- Mention computational complexity where relevant.
+- Avoid brute-force hyperparameter tuning.
+
+========================================
+NOTEBOOK 2 — DEEP LEARNING FORECASTING
+========================================
+
+Create a SECOND separate notebook focused ONLY on deep learning forecasting methods.
+
+This notebook should include:
+- proper sequence generation
+- sliding window datasets
+- efficient batching
+- train/validation/test strategy
+- GPU-aware design if useful
+
+Potential models:
+- LSTM
+- GRU
+- Temporal CNN
+- Transformer-based forecasting
+- N-BEATS (optional)
+
+For each:
+- explain suitability for this problem
+- discuss computational tradeoffs
+- compare against ML baselines
+
+IMPORTANT:
+Do NOT jump directly into deep learning without discussing whether the data characteristics justify it.
+
+The final output should feel like:
+- a senior data scientist's notebook
+- clean enough for interview submission
+- scalable enough for production adaptation
+- educational enough to explain reasoning
+
+Now first analyze my uploaded notebook carefully and then continue implementing the next stages step-by-step.
